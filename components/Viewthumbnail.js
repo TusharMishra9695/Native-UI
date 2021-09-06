@@ -8,18 +8,21 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
-export default function Viewthumbnail() {
+export default function Viewthumbnail({ navigation }) {
   return (
     <>
-      <ScrollView horizontal={true} style={{ marginTop: 20 }}>
+      <ScrollView horizontal={true} style={{ marginTop: 20 }} showsHorizontalScrollIndicator={false}>
         <View>
           <Image
             source={require("../assets/house2.jpg")}
             style={styles.imgmanage}
           />
 
-          <TouchableOpacity style={styles.buttonmanage}>
-            <Text style={{ fontSize: 12 }}>1.8 km </Text>
+          <TouchableOpacity style={styles.buttonmanage} 
+       
+          >
+            <Text style={{ fontSize: 12 }}  
+             >1.8 km </Text>
           </TouchableOpacity>
           <View style={{ top: -100, left: 20 }}>
             <Text style={{ fontSize: 17, color: "rgba(255, 255, 255, 1)" }}>

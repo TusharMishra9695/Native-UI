@@ -1,26 +1,49 @@
 import React from "react";
 import { useState } from "react";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { ScrollView, View, Text, StyleSheet ,Image} from "react-native";
 import Header from "./components/Header";
 import Search from "./components/Searchbar";
 import Chip from "./components/Chip";
 import Viewthumbnail from "./components/Viewthumbnail";
 import Viewcard from "./components/Viewcard";
+import Detail from "./Detail";
+
+const Stack =createNativeStackNavigator();
+
 export default function App() {
   return (
+    <NavigationContainer >
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} ></Stack.Screen>
+         <Stack.Screen name="Details" component={DetailsScreen} ></Stack.Screen>
+
+        </Stack.Navigator>
+</NavigationContainer>
+  );
+}
+function DetailsScreen() {
+  return (
+   <Detail />
+  );
+}
+function HomeScreen({ navigation }){
+  return(
     <ScrollView
-      showsVerticalScrollIndicator={false}
-      style={{
-        left: 20,
-        top: 50,
-        backgroundColor: "#fff",
-      }}
-    >
-      <Header />
+    showsVerticalScrollIndicator={false}
+    style={{
+      left: 20,
+      marginTop:20
+    }}
+  >
+
+          <Header />
       <Search />
       <Chip />
       <View style={styles.handle}>
-        <Text style={{ fontSize: 18 }}>Near from you</Text>
+        <Text style={{ fontSize: 18 }}       
+         onPress={() => navigation.navigate('Details')}>Near from you</Text>
         <Text style={styles.text}>See more</Text>
       </View>
       <Viewthumbnail />
@@ -30,9 +53,10 @@ export default function App() {
       </View>
       <Viewcard />
  
-    </ScrollView>
-  );
+        </ScrollView>
+  )
 }
+
 const styles = StyleSheet.create({
   handle: {
     display: "flex",
