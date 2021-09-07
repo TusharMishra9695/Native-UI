@@ -15,7 +15,7 @@ import {
 export default function Search() {
   return (
     <View>
-      <View style={styles.manage2}>
+      <View style={styles. manageStyle}>
         <Image source={require("../assets/search.jpg")} style={styles.img} />
 
         <TextInput
@@ -26,7 +26,7 @@ export default function Search() {
           autoCapitalize="none"
         ></TextInput>
         <TouchableOpacity style={styles.button}>
-          <Image source={require("../assets/sort.png")} style={styles.img2} />
+          <Image source={require("../assets/sort.png")} style={styles. imgStyle} />
         </TouchableOpacity>
       </View>
     </View>
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     marginRight: 100,
     marginLeft:-10
   },
-  manage2: {
+  manageStyle: {
     display: "flex",
     justifyContent: "space-between",
     flexWrap: "nowrap",
@@ -54,14 +54,14 @@ const styles = StyleSheet.create({
     left: 15,
     marginRight: 40,
   },
-  img2: {
+  imgStyle: {
     height: 25,
     width: 25,
     marginRight: 40,
     left: 5,
   },
   button: {
-    backgroundColor: "rgba(160, 218, 251, 1)",
+    backgroundColor: "#0CAFFF",
     padding: 10,
     width: "23%",
     right: 55,

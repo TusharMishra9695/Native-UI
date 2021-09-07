@@ -1,10 +1,10 @@
 
 import React from "react";
 import { ScrollView} from "react-native";
-import Head from "./component/Head";
-import Section from "./component/Section";
-import Viewgallery from "./component/Viewgallery";
-export default function Detail() {
+import Head from "../components/DetailScreenHead";
+import Section from "../components/DetailScreenSection";
+import Viewgallery from "../components/DetailScreenViewgallery";
+export default function DetailScreen() {
     return (
       <ScrollView
         showsVerticalScrollIndicator={false}

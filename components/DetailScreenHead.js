@@ -8,94 +8,108 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
+import { house2,white2,arrow3,bed,bathroom } from "../utils/images";
 export default function Head() {
   return (
     <>
       <View>
         <Image
           source={require("../assets/house2.jpg")}
-          style={styles.imgmanage}
+          style={styles.imgManage}
         />
-        <View style={styles.handleview}>
-          <TouchableOpacity style={styles.buttonmanage}>
+        <View style={styles.handleView}>
+          <TouchableOpacity style={styles.buttonManage}>
             <Image
               source={require("../assets/white2.png")}
-              style={styles.handleimg3}
+              style={styles.  handleImgStyle}
             />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.buttonmanage}>
+          <TouchableOpacity style={styles.buttonManageViewStyle}>
             <Image
               source={require("../assets/arrow3.png")}
-              style={styles.handleimg3}
+              style={styles.  handleImgStyleView}
             />
           </TouchableOpacity>
         </View>
 
-        <View style={{ top: -165, left: 20 }}>
-          <Text style={{ fontSize: 22, color: "rgba(255, 255, 255, 1)" }}>
+        <View style={{ top: -150, left: 20 }}>
+          <Text style={{ fontSize: 20, color: "rgba(255, 255, 255, 1)" }}>
             Dreamsville House
           </Text>
-          <Text style={{ fontSize: 13, color: "rgba(215, 215, 215, 1)" }}>
+          <Text style={{ fontSize: 12, color: "rgba(215, 215, 215, 1)" }}>
             JL Sultan Iskandar Muda, Jakarta selatan
           </Text>
         </View>
 
-        <View style={styles.handleview2}>
-        <TouchableOpacity style={styles.buttonmanage2}>
+        <View style={styles.handleViewStyle}>
+        <TouchableOpacity style={styles.  buttonManageStyle}>
 
           <Image
             source={require("../assets/bed.png")}
-            style={styles.handleimg2}
+            style={styles.  handleImg}
           />
                     </TouchableOpacity>
 
 
-          <Text style={styles.text3}>6 Bedroom</Text>
-          <TouchableOpacity style={styles.buttonmanage2}>
+          <Text style={styles.labelStyle}>6 Bedroom</Text>
+          <TouchableOpacity style={styles.  buttonManageStyle}>
 
           <Image
             source={require("../assets/bathroom.png")}
-            style={styles.handleimg3}
+            style={styles.  handleImgStyle}
           />
           </TouchableOpacity>
 
-          <Text style={styles.text3}>4 Bathroom</Text>
+          <Text style={styles.labelStyle}>4 Bathroom</Text>
         </View>
       </View>
     </>
   );
 }
 const styles = StyleSheet.create({
-  handleview: {
+  handleView: {
     display: "flex",
     justifyContent: "space-between",
     flexWrap: "nowrap",
     flexDirection: "row",
-    width: "80%",
-    left: 20,
+    width: "100%",
+    maxWidth:340,
+  
     
   },
-  handleview2: {
+  handleViewStyle: {
     display: "flex",
     justifyContent: "space-between",
     flexWrap: "nowrap",
     flexDirection: "row",
     width: "85%",
-    top:-140,
+    top:-130,
     left:20
 
   },
-  buttonmanage: {
+  buttonManage: {
     backgroundColor: "rgba(0, 0, 0, 0.24)",
     color: "white",
-    width: 37,
-    height: 37,
+    width: 35,
+    height: 35,
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 50,
-    top: -270,
+    top: -280,
+    left:20
   },
-  buttonmanage2: {
+  buttonManageViewStyle: {
+    backgroundColor: "rgba(0, 0, 0, 0.24)",
+    color: "white",
+    width: 35,
+    height: 35,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 50,
+    top: -280,
+    right:20
+  },
+  buttonManageStyle: {
     backgroundColor: "rgba(255, 255, 255, 0.2)",
     width: 28,
     height: 28,
@@ -104,22 +118,29 @@ const styles = StyleSheet.create({
     borderRadius: 5,
    
   },
-  imgmanage: {
+  imgManage: {
     height: 300,
     width: "95%",
     // maxWidth: 320,
     borderRadius: 20,
     marginRight: 25,
   },
-  handleimg2: {
+  handleImg: {
     height: 30,
     width: 20,
-    top: -10,
+    top: -7.5,
     right: 0,
   },
-  handleimg3: {
+  handleImgStyle: {
     height: 18,
     width: 18,
+    right:2
+  },
+  handleImgStyleView: {
+    height: 18,
+    width: 18,
+    alignItems: "center",
+    justifyContent: "center",
   },
   img: {
     height: 10,
@@ -128,7 +149,7 @@ const styles = StyleSheet.create({
     left: 15,
     marginRight: 40,
   },
-  text3: {
+  labelStyle: {
     color: "white",
     lineHeight: 20,
     fontSize: 12,

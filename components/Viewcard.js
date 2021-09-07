@@ -8,6 +8,7 @@ import {
   ScrollView,
   TouchableOpacity
 } from "react-native";
+import { bed,bathroom,house,house2,house3 } from "../utils/images";
 export default function Viewcard() {
 return (
 <>
@@ -17,14 +18,14 @@ return (
         </View>
         <View style={{marginLeft:20,display:"flex",flexDirection:"column"}}>
           <Text style={styles.text}> Orchad House</Text>
-          <Text style={styles.text2}>Rp 2,500,000,000 / Year</Text>
-          <View style={styles.handleview2}>
-          <Image source={require('../assets/bed.png')} style={styles.handleimg2} />
+          <Text style={styles.textStyle}>Rp 2,500,000,000 / Year</Text>
+          <View style={styles.handleviewStyle}>
+          <Image source={require('../assets/bed.png')} style={styles.handleimgStyle} />
 
-          <Text style={styles.text3} >6 Bedroom</Text>
-          <Image source={require('../assets/bathroom.png')} style={styles.handleimg3} />
+          <Text style={styles.labelStyle} >6 Bedroom</Text>
+          <Image source={require('../assets/bathroom.png')} style={styles.handleImgStyle} />
 
-          <Text style={styles.text3} >4 Bathroom</Text>
+          <Text style={styles.labelStyle} >4 Bathroom</Text>
           </View>
         </View>
 
@@ -36,31 +37,31 @@ return (
         </View>
         <View style={{marginLeft:20,display:"flex",flexDirection:"column"}}>
           <Text style={styles.text}> The Hollies House</Text>
-          <Text style={styles.text2}>Rp 2,000,000,000 / Year</Text>
-          <View style={styles.handleview2}>
-          <Image source={require('../assets/bed.png')} style={styles.handleimg2} />
+          <Text style={styles.textStyle}>Rp 2,000,000,000 / Year</Text>
+          <View style={styles. handleviewStyle}>
+          <Image source={require('../assets/bed.png')} style={styles.handleimgStyle} />
 
-          <Text style={styles.text3} >5 Bedroom</Text>
-          <Image source={require('../assets/bathroom.png')} style={styles.handleimg3} />
+          <Text style={styles.labelStyle} >5 Bedroom</Text>
+          <Image source={require('../assets/bathroom.png')} style={styles.handleImgStyle} />
 
-          <Text style={styles.text3} >2 Bathroom</Text>
+          <Text style={styles.labelStyle} >2 Bathroom</Text>
           </View>
         </View>
         </View>
-        <View style={ styles.handleview3}>
+        <View style={ styles.handleViewStyle}>
       <View>
         <Image source={require('../assets/house3.jpg')} style={styles.handleimg} />
         </View>
         <View style={{marginLeft:20,display:"flex",flexDirection:"column"}}>
           <Text style={styles.text}> Ascot House</Text>
-          <Text style={styles.text2}>Rp 3,500,000,000 / Year</Text>
-          <View style={styles.handleview2}>
-          <Image source={require('../assets/bed.png')} style={styles.handleimg2} />
+          <Text style={styles.textStyle}>Rp 3,500,000,000 / Year</Text>
+          <View style={styles.handleviewStyle}>
+          <Image source={require('../assets/bed.png')} style={styles.handleimgStyle} />
 
-          <Text style={styles.text3} >8 Bedroom</Text>
-          <Image source={require('../assets/bathroom.png')} style={styles.handleimg3} />
+          <Text style={styles.labelStyle} >8 Bedroom</Text>
+          <Image source={require('../assets/bathroom.png')} style={styles.handleImgStyle} />
 
-          <Text style={styles.text3} >5 Bathroom</Text>
+          <Text style={styles.labelStyle} >5 Bathroom</Text>
           </View>
         </View>
         </View>
@@ -74,10 +75,10 @@ const styles= StyleSheet.create({
         width:"90%",
         marginTop:20
     },
-    handleview2:{
+    handleviewStyle:{
         display:"flex",justifyContent:"space-between",flexWrap:"nowrap",flexDirection:"row",width:"75%"
     },
-    handleview3:{
+    handleViewStyle:{
         display:"flex",
         justifyContent:"space-between",
         flexWrap:"nowrap",
@@ -92,13 +93,13 @@ const styles= StyleSheet.create({
         width: 70,
         borderRadius:8
     },
-    handleimg2:{
+    handleimgStyle:{
         height: 30,
         width: 20,
         top:-10,
         right:5
     },
-    handleimg3:{
+    handleImgStyle:{
         height: 18,
         width: 18,
     },
@@ -109,13 +110,13 @@ const styles= StyleSheet.create({
      fontWeight:"500",
      letterSpacing:0.1,
     },
-    text2:{
+    textStyle:{
     color:"rgba(10, 142, 217, 1)",
     lineHeight:20,
     fontSize:12,
     fontWeight:"400",
     },
-    text3:{
+    labelStyle:{
         color:"rgba(133, 133, 133, 1)",
         lineHeight:20,
         fontSize:12,

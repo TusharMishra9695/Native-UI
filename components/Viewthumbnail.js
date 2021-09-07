@@ -8,27 +8,35 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
-export default function Viewthumbnail({ navigation }) {
+import { house2 ,house3} from "../utils/images";
+export default function Viewthumbnail({navigation}) {
   return (
     <>
-      <ScrollView horizontal={true} style={{ marginTop: 20 }} showsHorizontalScrollIndicator={false}>
+      <ScrollView
+        horizontal={true}
+        style={{ marginTop: 20 }}
+        showsHorizontalScrollIndicator={false}
+      >
         <View>
           <Image
             source={require("../assets/house2.jpg")}
-            style={styles.imgmanage}
+            style={styles.imgManage}
+            
           />
 
-          <TouchableOpacity style={styles.buttonmanage} 
-       
-          >
-            <Text style={{ fontSize: 12 }}  
-             >1.8 km </Text>
+          <TouchableOpacity style={styles.buttonManage} >
+          <Image
+            source={require("../assets/pin.png")}
+            style={styles.imgManageView}
+            
+          />
+            <Text style={{ fontSize: 12,color:"white",right:5}}  >1.8 km </Text>
           </TouchableOpacity>
-          <View style={{ top: -100, left: 20 }}>
-            <Text style={{ fontSize: 17, color: "rgba(255, 255, 255, 1)" }}>
+          <View style={{ top: -83, left: 20 }}>
+            <Text style={{ fontSize: 16, color: "rgba(255, 255, 255, 1)" }}    >
               Dreamsville House
             </Text>
-            <Text style={{ fontSize: 14, color: "rgba(215, 215, 215, 1)" }}>
+            <Text style={{ fontSize: 12, color: "rgba(215, 215, 215, 1)" }}>
               Ji Sultan Iskandar Muda
             </Text>
           </View>
@@ -36,17 +44,23 @@ export default function Viewthumbnail({ navigation }) {
 
         <View>
           <Image
-            source={require("../assets/house3.jpg")}
-            style={styles.imgmanage}
+            source={require("../assets/house2.jpg")}
+            style={styles.imgManage}
+
           />
-          <TouchableOpacity style={styles.buttonmanage}>
-            <Text style={{ fontSize: 12 }}>1.8 km </Text>
+          <TouchableOpacity style={styles.buttonManage}>
+          <Image
+            source={require("../assets/pin.png")}
+            style={styles.imgManageView}
+            
+          />
+            <Text style={{ fontSize: 12,color:"white",right:5}}>1.8 km </Text>
           </TouchableOpacity>
-          <View style={{ top: -100, left: 20 }}>
-            <Text style={{ fontSize: 17, color: "rgba(255, 255, 255, 1)" }}>
+          <View style={{ top: -83, left: 20 }}>
+            <Text style={{ fontSize: 16, color: "rgba(255, 255, 255, 1)" }}>
               Ascot House
             </Text>
-            <Text style={{ fontSize: 14, color: "rgba(215, 215, 215, 1)" }}>
+            <Text style={{ fontSize: 12, color: "rgba(215, 215, 215, 1)" }}>
               Ji Cilandak Iskandar Muda
             </Text>
           </View>
@@ -56,24 +70,34 @@ export default function Viewthumbnail({ navigation }) {
   );
 }
 const styles = StyleSheet.create({
-  buttonmanage: {
+  buttonManage: {
     backgroundColor: "rgba(0, 0, 0, 0.24)",
     color: "white",
-    width: 69,
-    height: 25,
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: 50,
-    top: -255,
+    width: 73,
+    height: 24,
+    justifyContent:"space-between",
+    alignItems:"center",
+    borderRadius: 20,
+    top: -260,
     left: 120,
+    display:"flex",
+    flexDirection:"row",
+    flexWrap:"wrap"
+    
   },
-  imgmanage: {
+  imgManage: {
     height: 280,
     width: 205,
     borderRadius: 20,
     marginRight: 25,
   },
-  img: {
+  imgManageView:{
+    height: 10,
+    width: 7,
+left:15,
+marginTop:13
+  },
+  img:{
     height: 10,
     width: 10,
     top: 10,

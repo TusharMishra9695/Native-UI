@@ -27,7 +27,7 @@ export default function Header() {
   );
   return (
     <View >
-      <Text style={styles.text1}>Location</Text>
+      <Text style={styles.textStyle}>Location</Text>
       <View style={styles.manage}>
         <Picker
           style={{ width: 118 }}
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     top: 100,
     left: 10,
   },
-  text1: {
+  textStyle: {
     fontSize: 12,
     color: "grey",
   },
