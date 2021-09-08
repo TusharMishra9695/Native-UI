@@ -19,16 +19,16 @@ export default function Chip() {
       showsHorizontalScrollIndicator={false}
       horizontal={true}
     >
-      {Buttondata.map(({ data,value }, index) => {
-        return (<>
+      {Buttondata.map(({ data,value },index ) => {
+        return (<View key={index}>
         { value === true ? (
-          <TouchableOpacity style={styles.button} key={index}>
+          <TouchableOpacity style={styles.button} >
             <Text style={{ color: "white", fontSize: 12,fontWeight:"500",lineHeight:14 }}> {data} </Text>
-          </TouchableOpacity>) : (<TouchableOpacity style={styles.buttonView} key={index}>
+          </TouchableOpacity>) : (<TouchableOpacity style={styles.buttonView} >
             <Text style={{ color: "rgba(133, 133, 133, 1)", fontSize: 12,fontWeight:"500",lineHeight:14 }}> {data} </Text>
           </TouchableOpacity>)
       }
-        </>);
+        </View>);
       })}
     </ScrollView>
   );

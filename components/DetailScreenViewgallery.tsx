@@ -18,7 +18,9 @@ export default function Viewgallery() {
         <Text style={styles.textgallery}>Gallery</Text>
         <View style={styles.manageview}>
           <Image
-            source={{house3}}
+            // source={{house3 }}
+            source={require("../assets/house3.jpg")}
+
             style={styles.handleimg}
           />
           <Image

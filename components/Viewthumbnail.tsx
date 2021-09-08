@@ -8,8 +8,9 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
+import { Props } from "../interface/interface";
 import { house2 ,house3} from "../utils/images";
-export default function Viewthumbnail({navigation}) {
+export default function Viewthumbnail(prop: { navigation: { navigate: (arg0: string) => void; }; } ) {
   return (
     <>
       <ScrollView
@@ -33,7 +34,10 @@ export default function Viewthumbnail({navigation}) {
             <Text style={{ fontSize: 12,color:"white",right:5}}  >1.8 km </Text>
           </TouchableOpacity>
           <View style={{ top: -83, left: 20 }}>
-            <Text style={{ fontSize: 16, color: "rgba(255, 255, 255, 1)" }}    >
+            <Text style={{ fontSize: 16, color: "rgba(255, 255, 255, 1)" }}  
+                        onPress={()=> prop.navigation.navigate('Details')}
+
+            >
               Dreamsville House
             </Text>
             <Text style={{ fontSize: 12, color: "rgba(215, 215, 215, 1)" }}>

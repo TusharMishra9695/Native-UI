@@ -1,4 +1,5 @@
-const Buttondata = [
+import { Data } from "../interface/interface";
+const Buttondata : Data[] = [
   {
     data: "House",
     value:true,

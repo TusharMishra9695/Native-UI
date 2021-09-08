@@ -3,9 +3,9 @@ import { useState } from "react";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './Container/HomeScreen';
-import DetailScreen from './Container/DetailScreen';
-const Stack =createNativeStackNavigator();
-
+import DetailScreen from "./Container/DetailScreen";
+import { RootStackParamList } from "./interface/interface";
+const Stack =createNativeStackNavigator<RootStackParamList>();
 export default function App() {
   return (
     <NavigationContainer >

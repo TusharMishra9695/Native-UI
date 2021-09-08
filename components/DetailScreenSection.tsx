@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { Avatar } from 'react-native-paper';
-import { avatar,call3,msg } from "../utils/images";
+import { avatar,call3,msg3 } from "../utils/images";
 export default function Section() {
     return (
       <>

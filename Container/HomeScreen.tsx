@@ -4,10 +4,9 @@ import Search from "../components/Searchbar";
 import Chip from "../components/Chip";
 import Viewthumbnail from "../components/Viewthumbnail";
 import Viewcard from "../components/Viewcard";
-import { ScrollView, View, Text, StyleSheet } from "react-native";
-
-
-export default function HomeScreen({ navigation }){
+import { ScrollView, View, Text, StyleSheet} from "react-native";
+import {Props} from "../interface/interface";
+export default function HomeScreen({ navigation }:Props){
     return(
       <ScrollView
       showsVerticalScrollIndicator={false}
@@ -22,10 +21,12 @@ export default function HomeScreen({ navigation }){
         <Chip />
         <View style={styles.handleView}>
           <Text style={{ fontSize: 18 }}       
-           onPress={() => navigation.navigate('Details')}>Near from you</Text>
+           >Near from you</Text>
           <Text style={styles.labelStyle}>See more</Text>
         </View>
-        <Viewthumbnail />
+
+        <Viewthumbnail navigation={navigation} />
+        
         <View style={styles.handleViewStyle}>
           <Text style={{ fontSize: 18 }}>Best for you</Text>
           <Text style={styles.labelStyle}>See more</Text>
