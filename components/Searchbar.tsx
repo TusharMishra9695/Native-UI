@@ -24,6 +24,7 @@ export default function Search() {
           placeholder="Search address, or near you"
           placeholderTextColor="#858585"
           autoCapitalize="none"
+          
         ></TextInput>
         <TouchableOpacity style={styles.button}>
           <Image source={require("../assets/sort.png")} style={styles. imgStyle} />
@@ -37,7 +38,9 @@ const styles = StyleSheet.create({
     height: 45,
     borderColor: "#7a42f4",
     marginRight: 100,
-    marginLeft:-10
+    marginLeft:-10,
+    fontSize:12,
+   
   },
   manageStyle: {
     display: "flex",
@@ -59,6 +62,7 @@ const styles = StyleSheet.create({
     width: 25,
     marginRight: 40,
     left: 5,
+    tintColor:"white"
   },
   button: {
     backgroundColor: "#0CAFFF",

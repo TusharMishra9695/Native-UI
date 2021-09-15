@@ -130,17 +130,22 @@ const styles = StyleSheet.create({
     width: 20,
     top: -7.5,
     right: 0,
+    tintColor:"white",
+
   },
   handleImgStyle: {
     height: 18,
     width: 18,
-    right:2
+    right:2,
+    tintColor:"white",
+
   },
   handleImgStyleView: {
     height: 18,
     width: 18,
     alignItems: "center",
     justifyContent: "center",
+    tintColor:"white",
   },
   img: {
     height: 10,

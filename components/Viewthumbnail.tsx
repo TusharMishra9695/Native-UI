@@ -20,11 +20,10 @@ export default function Viewthumbnail(prop: { navigation: { navigate: (arg0: str
       >
         <View>
           <Image
-            source={require("../assets/house2.jpg")}
+            source={house3}
             style={styles.imgManage}
             
           />
-
           <TouchableOpacity style={styles.buttonManage} >
           <Image
             source={require("../assets/pin.png")}
@@ -61,7 +60,10 @@ export default function Viewthumbnail(prop: { navigation: { navigate: (arg0: str
             <Text style={{ fontSize: 12,color:"white",right:5}}>1.8 km </Text>
           </TouchableOpacity>
           <View style={{ top: -83, left: 20 }}>
-            <Text style={{ fontSize: 16, color: "rgba(255, 255, 255, 1)" }}>
+            <Text style={{ fontSize: 16, color: "rgba(255, 255, 255, 1)" }}
+              onPress={()=> prop.navigation.navigate('Scheduler')}
+
+            >
               Ascot House
             </Text>
             <Text style={{ fontSize: 12, color: "rgba(215, 215, 215, 1)" }}>

@@ -17,7 +17,8 @@ export default function Section() {
       <Text style={styles.textmanage}>Description</Text>
       <View style={styles.handleview}>
       <Text style={styles.textmanageStyle}>
-The 3 level house that has a modern design, has a large pool and a garage that fits up to four cars...<Text style={{color:"#0CAFFF"}}>Show More </Text>
+The 3 level house that has a modern design, has a large pool and a garage that fits up to four cars...<Text style={{color:"#0CAFFF"}}>Show More
+</Text>
 
       </Text>
       </View>
@@ -108,5 +109,6 @@ const styles = StyleSheet.create({
         width: 16,
         alignItems: "center",
         justifyContent: "center",
+        tintColor:"white"
       },
 })

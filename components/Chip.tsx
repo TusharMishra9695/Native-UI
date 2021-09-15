@@ -35,7 +35,7 @@ export default function Chip() {
 }
 const styles = StyleSheet.create({
   button: {
-    width:69,
+    minWidth:70,
     height: 34,
     backgroundColor: "#0CAFFF",
     borderRadius: 10,
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   buttonView: {
-    width:69,
+    minWidth:70,
     height: 34,
     backgroundColor: "rgba(247, 247, 247, 1)",
     borderRadius: 10,

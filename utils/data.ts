@@ -5,7 +5,7 @@ const Buttondata : Data[] = [
     value:true,
   },
   {
-    data: "Apartment",
+    data: "Apartmentnumber",
     value:false,
   },
   {
