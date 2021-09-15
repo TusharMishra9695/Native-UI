@@ -41,6 +41,9 @@ export default function Scheduler(prop) {
       <>
         {Object.keys(weekSlots).map((day) => {
           const { from, to, isEnabled } = weekSlots[day];
+
+
+
           const updateValue = (key, data, day) => {                                                                                    
             const slots = { ...weekSlots };
              const currentSlot = slots[day];
@@ -76,6 +79,10 @@ export default function Scheduler(prop) {
     }
 
   };
+
+  // Functions and state is declared inside the map because in the onchange function if we declare it outside  the map then 'day' is not accessable 
+  // due to which we declare it inside map 
+
   const [date, setDate] = useState(new Date(1598051730000));
   const [mode, setMode] = useState("date");
   const [show, setShow] = useState(false);
@@ -106,7 +113,7 @@ export default function Scheduler(prop) {
                endTime = moment(to,"HH:mm" )
                endTime2 = moment(to,"hh:mm" )
               {
-                moment( endTime2).isAfter(startTime2) ||  moment( startTime2).isBefore(endTime2)  ?
+                moment( endTime2).isAfter(startTime2) ||  moment( startTime2).isAfter(endTime2)  ?
                 updateValue("to",to,day)     
                 : (  alert( "Please fill time correctly"),
                         setCount2(count2-1))
@@ -223,12 +230,12 @@ export default function Scheduler(prop) {
       >
         <Text style={styles.handleText}>SCHEDULE</Text>
         <SchedulerTime />
-        <Text>{count2}</Text>
+        {/* <Text>{count2}</Text> */}
         {/* here we select the two state i.e count and count2 and the intention is if all the buttons are closed and also count is equal to zero then go for next page 
         or if count is multiple of 2 which is equal to count 2 the go for next page and multiple of 2 is applied because there are seven switch and
          forteen input field for date time picker  so everything is in multiple of two .
            */}
-        { ((count*2)   === (count2) ) || count ===0  ?
+        { ((count*2)   === (count2) ) || ((count*4)   === (count2) ) || count ===0  ?
         <TouchableOpacity style={styles.nextButton}>
             <Text
               style={styles.textStyle}
