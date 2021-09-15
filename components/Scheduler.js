@@ -172,8 +172,8 @@ export default function Scheduler(prop) {
                     value={isEnabled}
                   />
                   <Text>{isEnabled ? "OPEN" : "CLOSED"}</Text>
-        <Text>{count}</Text>
-        <Text>{count2}</Text>
+        {/* <Text>{count}</Text>
+        <Text>{count2}</Text> */}
 
                   {show && (
                     <DateTimePicker
