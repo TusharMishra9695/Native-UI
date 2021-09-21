@@ -24,6 +24,9 @@ export default function Scheduler(prop) {
   const [date, setDate] = useState(new Date(1598051730000));
   const [mode, setMode] = useState("time");
   // const [show, setShow] = useState(false);
+const [on,setOn]=useState({
+fromValue:"enter"
+})
   const [showPicker, setShowPicker] = useState({
     visible: false,
     slot: "MON",
@@ -73,14 +76,36 @@ const onChange = (event, selectedDate) => {
   setDate(currentDate);
   let tempDate = new Date(currentDate);
   let  fTime= tempDate.getHours() + ":" + tempDate.getMinutes() ;
-      let startTime,endTime,startTime2,endTime2;      
+  // console.log(fTime)
+  // setOn({handle:true,set:fTime})
+  // console.log(on)
+  //      updateValue(showPicker.slotType, on.set, showPicker.slot);
+  //      setShowPicker({
+  //       visible: false,
+  //       slot: null,
+  //       slotType: "from" || "to"
+  //     })
+  //     setOn({set:"null"})
+
+
+
+//on
+      let startTime,endTime;
+        
       // here there is a boolean state which specify the slotType i.e
       // if  boolean state(text) is true then slotType  is from else   slotType is to .
     if(text === true)
      {
-      let from = fTime
-       startTime = moment(from,"HH:mm")
-       startTime2 = moment(from, "hh:mm")
+       let   from = fTime
+        // console.log(String(from))
+          // console.log(from)
+       startTime = moment(from,"hh:mm")
+       console.log(on)
+
+       setOn({
+         fromValue:startTime
+       })
+       console.log(on.fromValue)
 
        updateValue(showPicker.slotType, from, showPicker.slot);
        setText(false)
@@ -88,30 +113,32 @@ const onChange = (event, selectedDate) => {
         visible: false,
         slot: null,
         slotType: "from" || "to"
-    
       })
-    // alert(text)
+    // alert(text)              
   }
   // here we are applying our logic for validation of time and for next page if time entered correctly 
   //  then it will pass the value in function for  state  being update for next page
   else{
     
-    let to = fTime 
-     endTime = moment(to,"HH:mm" )
-     endTime2 = moment(to,"hh:mm" )
-    {
-      moment( endTime2).isAfter(startTime2) ||  moment( startTime2).isAfter(endTime2)  ?
-      updateValue(showPicker.slotType,to, showPicker.slot)
-      : (  alert( "Please fill time correctly"),
-              setCount2(count2-1))
+       let to = fTime 
+  
+      // endTime = moment(to,"hh:mm" )
+  // console.log(moment("13:00","hh:mm").isBefore(moment(to,"hh:mm")))
+    if((on.fromValue).isBefore(moment(to,"hh:mm")) )
 
+    {
+      updateValue(showPicker.slotType,to, showPicker.slot)
+    }else{
+
+      alert( "Please fill time correctly")
+              setCount2(count2-1)    
      }
-    
+
     setText(true)
     // alert(text)
-
   } 
 };
+//move
 const showMode = (currentMode) => {
   // setShow(true);
   // setMode(currentMode);
@@ -150,7 +177,7 @@ const showTimepicker = () => {
                       // onPress={showTimepicker}
                       style={styles.button}
                     >
-                      <Text>{from}{from ? 'AM' :null}</Text>
+                      <Text>{from}{ from  < '12:00' ? 'AM' : from < '1:00'  ? 'PM': from === null ? null :'AM' }</Text>
                     </TouchableOpacity>
                   ) : (
                     <TouchableOpacity
@@ -158,10 +185,10 @@ const showTimepicker = () => {
                       style={styles.button}
                       disabled
                     >
-                      <Text>{from}{from ? 'AM' :null}</Text>
+                      <Text>{from}{ from  < '12:00' ? 'AM' : from < '1:00'  ? 'PM': from === null ?null : 'AM' }</Text>
                     </TouchableOpacity>
                   )}
-               
+
                   <Text style={styles.labelStyle}>to</Text>
                   {isEnabled ? (
                     <TouchableOpacity
@@ -171,7 +198,7 @@ const showTimepicker = () => {
                       }
                       style={styles.button}
                     >
-                      <Text>{to} {to ? 'PM' :null}</Text>
+                      <Text>{to} { to  < '12:00' ? 'AM' : to < '1:00'  ? 'PM': to === null ? null :'AM' }</Text>
                     </TouchableOpacity>
                   ) : (
                     <TouchableOpacity
@@ -179,7 +206,7 @@ const showTimepicker = () => {
                       style={styles.button}
                       disabled
                     >
-                      <Text>{to} {to ? 'PM' :null}</Text>
+                     <Text>{to} { to  < '12:00' ? 'AM' : to < '1:00'  ? 'PM': to === null ? null :'AM' }</Text>
                     </TouchableOpacity>
                   )}
                   <Switch
@@ -233,7 +260,7 @@ const showTimepicker = () => {
                     />
          )}
      
-        { ((count*2)   === (count2) ) || ((count*4)   === (count2) ) || count ===0  ?
+        { ((count*2)   === (count2) ) || ((count*3)   === (count2) ) || ((count*4)   === (count2) ) || count ===0  ?
         <TouchableOpacity style={styles.nextButton}>
           
             <Text
